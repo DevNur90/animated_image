@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.P. Dough Loading Demo</title>
+<style>
+  /* -------------------- */
+  /* বেসিক সেটআপ */
+  /* -------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff5f5;
+    overflow: hidden;
+  }
+
+  /* -------------------- */
+  /* লোডিং স্ক্রিন স্টাইল */
+  /* -------------------- */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff5f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 9999;
+  }
+
+  .car {
+    position: absolute;
+    bottom: 40%;
+    left: -200px;
+    width: 180px;
+    animation: drive 5s linear infinite;
+  }
+
+  @keyframes drive {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(110vw); }
+  }
+
+  /* -------------------- */
+  /* মূল কনটেন্ট অংশ */
+  /* -------------------- */
+  #main-content {
+    display: none;
+    text-align: center;
+    padding-top: 20vh;
+    color: #E31E26;
+  }
+
+  #main-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  #main-content p {
+/*    color: #000;*/
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+  <!-- লোডিং স্ক্রিন -->
+  <div id="preloader">
+    
+    <img src="dp-dough-car.svg" alt="D.P. Dough Car" class="car" />
+  </div>
+
+  <!-- মূল কনটেন্ট -->
+  <!-- <div id="main-content">
+    <h1>Welcome to My Site</h1>
+    <p>Now you’ve entered the main content area!</p>
+  </div> -->
+<div id="main-content">
+   <h1>Welcome to My Site</h1>
+    <h1>Reload/refresh the page</h1>
+   
+    <p>Click this live link for see my design preloader animated image</p>
+
+  </div>
+  <!-- -------------------- -->
+  <!-- জাভাস্ক্রিপ্ট -->
+  <!-- -------------------- -->
+  <script>
+    // সাইট লোড হওয়ার পর 3 সেকেন্ডে preloader হাইড হবে
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
